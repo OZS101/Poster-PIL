@@ -121,7 +121,11 @@ body {
   border: 1.5px solid var(--color-dark);
   border-radius: 2px;
   text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
 }
+
+.option-card.selected { box-shadow: 0 0 0 3px var(--color-gold); }
 
 .option-card.deon { background: var(--color-deon-bg); border-color: var(--color-deon); }
 .option-card.util { background: var(--color-util-bg); border-color: var(--color-util); }

@@ -32,19 +32,19 @@
 
   <div class="section-label loose">The Three Ethical Choices</div>
   <div class="middle-row">
-    <div class="option-card deon">
+    <div class="option-card deon" data-vote-index="1" onclick="toggleVote(this)">
       <span class="tag">Deontological</span>
       <img class="card-img" src="img/Keep_Promise.webp" alt="Keep the Promise">
       <div class="choice">Keep the Promise</div>
       <div class="desc">Give the money to the nephew as promised. Honor the duty to your dying friend — the moral worth of the action lies in keeping your word, regardless of outcome.</div>
     </div>
-    <div class="option-card util">
+    <div class="option-card util" data-vote-index="0" onclick="toggleVote(this)">
       <span class="tag">Utilitarianism</span>
       <img class="card-img" src="img/Give_Money.webp" alt="Donate to the Hospital">
       <div class="choice">Donate to the Hospital</div>
       <div class="desc">Give the money to the children's hospital. This produces the greatest good for the greatest number, alleviating suffering and funding life-saving research.</div>
     </div>
-    <div class="option-card ego">
+    <div class="option-card ego" data-vote-index="2" onclick="toggleVote(this)">
       <span class="tag">Egoism</span>
       <img class="card-img" src="img/Take_Money.webp" alt="Keep the Money">
       <div class="choice">Keep the Money</div>
@@ -53,16 +53,16 @@
   </div>
 
   <div class="big-stat">
-    <div class="stat-pill s-util"><span class="num">7</span><span class="lbl">Utilitarianism</span></div>
-    <div class="stat-pill s-deon"><span class="num">2</span><span class="lbl">Deontological</span></div>
-    <div class="stat-pill s-ego"><span class="num">1</span><span class="lbl">Egoism</span></div>
+    <div class="stat-pill s-util"><span class="num" id="vote-0">10</span><span class="lbl">Utilitarianism</span></div>
+    <div class="stat-pill s-deon"><span class="num" id="vote-1">4</span><span class="lbl">Deontological</span></div>
+    <div class="stat-pill s-ego"><span class="num" id="vote-2">4</span><span class="lbl">Egoism</span></div>
   </div>
 
   <div class="charts-row">
     <div class="chart-card">
       <h3>Survey Results — Votes by Choice</h3>
       <div class="chart-container">
-        <canvas id="barChart" role="img" aria-label="Bar chart: Utilitarianism 7 votes, Deontological 2 votes, Egoism 1 vote">Votes: Utilitarianism 7, Deontological 2, Egoism 1.</canvas>
+        <canvas id="barChart" role="img" aria-label="Bar chart: Utilitarianism 10 votes, Deontological 4 votes, Egoism 4 votes">Votes: Utilitarianism 10, Deontological 4, Egoism 4.</canvas>
       </div>
       <div class="legend">
         <span class="legend-item"><span class="legend-dot util"></span>Utilitarianism</span>
@@ -73,12 +73,12 @@
     <div class="chart-card">
       <h3>Percentages of Responses</h3>
       <div class="chart-container">
-        <canvas id="pieChart" role="img" aria-label="Pie chart: Utilitarianism 70%, Deontological 20%, Egoism 10%">Utilitarianism 70%, Deontological 20%, Egoism 10%.</canvas>
+        <canvas id="pieChart" role="img" aria-label="Pie chart: Utilitarianism 56%, Deontological 22%, Egoism 22%">Utilitarianism 56%, Deontological 22%, Egoism 22%.</canvas>
       </div>
       <div class="legend">
-        <span class="legend-item"><span class="legend-dot util"></span>Utilitarianism — 70%</span>
-        <span class="legend-item"><span class="legend-dot deon"></span>Deontological — 20%</span>
-        <span class="legend-item"><span class="legend-dot ego"></span>Egoism — 10%</span>
+        <span class="legend-item"><span class="legend-dot util"></span>Utilitarianism — 56%</span>
+        <span class="legend-item"><span class="legend-dot deon"></span>Deontological — 22%</span>
+        <span class="legend-item"><span class="legend-dot ego"></span>Egoism — 22%</span>
       </div>
     </div>
   </div>
@@ -86,9 +86,9 @@
   <div class="reflection-box">
     <div class="section-label">Reflection</div>
     <ul>
-      <li>The majority of the 10 respondents chose <strong class="highlight">utilitarianism</strong>, reasoning that donating to the children's hospital would produce greater overall good. They argued that giving the money to a drug addict and gambler would be wasteful and ultimately harmful, while the hospital could save many lives and fund critical research.</li>
-      <li>The two respondents who chose <strong class="highlight">deontology</strong> emphasized the binding duty of a deathbed promise. They focused on the act itself — keeping one's word — rather than the consequences, and expressed interest in seeking ways to also change the nephew's behavior.</li>
-      <li>The one respondent who chose <strong class="highlight">egoism</strong> reasoned that since no one else knows of the promise, keeping the treasure for oneself is the rational, self-interested choice.</li>
+      <li>The majority of the 18 respondents chose <strong class="highlight">utilitarianism</strong>, reasoning that donating to the children's hospital would produce greater overall good. They argued that giving the money to a drug addict and gambler would be wasteful and ultimately harmful, while the hospital could save many lives and fund critical research.</li>
+      <li>The four respondents who chose <strong class="highlight">deontology</strong> emphasized the binding duty of a deathbed promise. They focused on the act itself — keeping one's word — rather than the consequences, and expressed interest in seeking ways to also change the nephew's behavior.</li>
+      <li>The four respondents who chose <strong class="highlight">egoism</strong> reasoned that since no one else knows of the promise, keeping the treasure for oneself is the rational, self-interested choice.</li>
       <li>Interestingly, some respondents considered a <strong class="highlight">compromise</strong> — splitting the money between the nephew, the hospital, and themselves — though this neither fully honors the promise nor maximizes overall benefit, raising questions about what the "right" solution truly is.</li>
     </ul>
   </div>
