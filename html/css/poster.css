@@ -1,18 +1,21 @@
 :root {
-  --color-bg: #e8e4d8;
-  --color-paper: #f5f2ea;
-  --color-dark: #2c2416;
-  --color-text: #1a1208;
-  --color-muted: #5c4f36;
-  --color-light-text: #e8e2d4;
-  --color-gold: #c9a96e;
-  --color-deon: #1a4a6e;
-  --color-util: #1a5c2a;
-  --color-ego: #8b4510;
-  --color-deon-bg: #dce8f0;
-  --color-util-bg: #ddf0de;
-  --color-ego-bg: #f0e0cc;
-  --color-border: #c5b99a;
+  --color-bg: #2B2114;
+  --color-paper: #1a1410;
+  --color-dark: #101820;
+  --color-text: #F4E8C8;
+  --color-heading: #E0B15A;
+  --color-muted: #C2A46D;
+  --color-light-text: #e0d5b8;
+  --color-gold: #D9A441;
+  --color-danger: #B85C28;
+  --color-ocean: #1F5F5B;
+  --color-border: #1F5F5B;
+  --color-deon: #2B6A90;
+  --color-util: #1a8a4a;
+  --color-ego: #B85C28;
+  --color-deon-bg: #0d2a38;
+  --color-util-bg: #0d2a18;
+  --color-ego-bg: #2a1a0d;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,7 +29,7 @@ body {
 
 .poster {
   background: var(--color-paper);
-  border: 3px solid var(--color-dark);
+  border: 3px solid var(--color-ocean);
   max-width: 1100px;
   margin: 0 auto;
   padding: 36px 40px 32px;
@@ -34,7 +37,7 @@ body {
 
 .header {
   text-align: center;
-  border-bottom: 2px solid var(--color-dark);
+  border-bottom: 2px solid var(--color-ocean);
   padding-bottom: 16px;
   margin-bottom: 20px;
 }
@@ -42,7 +45,7 @@ body {
 .header h1 {
   font-family: 'Playfair Display', serif;
   font-size: 34px;
-  color: var(--color-text);
+  color: var(--color-heading);
   letter-spacing: -0.5px;
   margin-bottom: 8px;
 }
@@ -77,10 +80,11 @@ body {
 
 .prompt-box {
   background: var(--color-dark);
-  color: var(--color-paper);
+  color: var(--color-light-text);
   padding: 18px 22px;
   margin-bottom: 18px;
   border-radius: 2px;
+  border: 1px solid var(--color-ocean);
 }
 
 .prompt-box .section-label { color: var(--color-gold); }
@@ -100,14 +104,15 @@ body {
 .prompt-box .question {
   margin-top: 12px;
   padding-top: 12px;
-  border-top: 1px solid var(--color-muted);
+  border-top: 1px solid var(--color-ocean);
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: var(--color-gold);
 }
 
-.highlight { color: var(--color-gold); }
+.gold { color: var(--color-gold); }
+.danger { color: var(--color-danger); }
 
 .middle-row {
   display: grid;
@@ -148,9 +153,9 @@ body {
   margin-bottom: 10px;
 }
 
-.deon .tag { background: var(--color-deon); color: var(--color-deon-bg); }
-.util .tag { background: var(--color-util); color: var(--color-util-bg); }
-.ego  .tag { background: var(--color-ego); color: var(--color-ego-bg); }
+.deon .tag { background: var(--color-deon); color: var(--color-paper); }
+.util .tag { background: var(--color-util); color: var(--color-paper); }
+.ego  .tag { background: var(--color-ego); color: var(--color-paper); }
 
 .card-img {
   width: 100%;
@@ -182,8 +187,8 @@ body {
 }
 
 .chart-card {
-  background: #fff;
-  border: 1px solid var(--color-border);
+  background: var(--color-dark);
+  border: 1px solid var(--color-ocean);
   padding: 16px;
   border-radius: 2px;
 }
@@ -193,7 +198,7 @@ body {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  color: var(--color-muted);
+  color: var(--color-gold);
   margin-bottom: 12px;
   text-transform: uppercase;
 }
@@ -231,9 +236,10 @@ body {
 
 .reflection-box {
   background: var(--color-dark);
-  color: var(--color-paper);
+  color: var(--color-light-text);
   padding: 18px 22px;
   border-radius: 2px;
+  border: 1px solid var(--color-ocean);
 }
 
 .reflection-box .section-label { color: var(--color-gold); }
@@ -275,6 +281,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-.stat-pill.s-util { background: var(--color-util); color: var(--color-util-bg); }
-.stat-pill.s-deon { background: var(--color-deon); color: var(--color-deon-bg); }
-.stat-pill.s-ego  { background: var(--color-ego); color: var(--color-ego-bg); }
+.stat-pill.s-util { background: var(--color-util); color: var(--color-paper); }
+.stat-pill.s-deon { background: var(--color-deon); color: var(--color-paper); }
+.stat-pill.s-ego  { background: var(--color-ego); color: var(--color-paper); }
