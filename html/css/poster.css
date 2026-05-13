@@ -284,3 +284,27 @@ body {
 .stat-pill.s-util { background: var(--color-util); color: var(--color-paper); }
 .stat-pill.s-deon { background: var(--color-deon); color: var(--color-paper); }
 .stat-pill.s-ego  { background: var(--color-ego); color: var(--color-paper); }
+
+.audio-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--color-dark);
+  border: 2px solid var(--color-ocean);
+  color: var(--color-gold);
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s, background 0.2s;
+  padding: 0;
+  line-height: 1;
+}
+
+.audio-toggle:hover { background: var(--color-ocean); }
+.audio-toggle.muted { opacity: 0.4; }

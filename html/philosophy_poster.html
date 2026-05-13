@@ -97,5 +97,35 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script src="js/charts.js"></script>
+
+<audio id="audio-ship" src="audio/freesound_community-haunted-ghost-ship-77461.mp3" loop preload="auto"></audio>
+<audio id="audio-rain" src="audio/audiopapkin-rain-and-little-storm-298087.mp3" loop preload="auto"></audio>
+<audio id="audio-creak" src="audio/tanweraman-creaking-wood-hq-257176.mp3" loop preload="auto"></audio>
+
+<button class="audio-toggle muted" id="audioToggle" onclick="toggleAudio()">&#9835;</button>
+
+<script>
+var audioToggle = document.getElementById('audioToggle');
+var tracks = [
+  document.getElementById('audio-ship'),
+  document.getElementById('audio-rain'),
+  document.getElementById('audio-creak')
+];
+var playing = false;
+
+tracks.forEach(function(t) { t.volume = 0.15; });
+
+function toggleAudio() {
+  if (!playing) {
+    tracks.forEach(function(t) { t.play(); });
+    playing = true;
+    audioToggle.classList.remove('muted');
+  } else {
+    tracks.forEach(function(t) { t.pause(); });
+    playing = false;
+    audioToggle.classList.add('muted');
+  }
+}
+</script>
 </body>
 </html>
