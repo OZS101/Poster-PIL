@@ -125,7 +125,13 @@ body {
   transition: box-shadow 0.15s;
 }
 
-.option-card.selected { box-shadow: 0 0 0 3px var(--color-gold); }
+@keyframes flash {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.flash { animation: flash 0.2s ease; }
 
 .option-card.deon { background: var(--color-deon-bg); border-color: var(--color-deon); }
 .option-card.util { background: var(--color-util-bg); border-color: var(--color-util); }
@@ -210,6 +216,7 @@ body {
   gap: 5px;
   font-size: 11px;
   color: var(--color-muted);
+  cursor: pointer;
 }
 
 .legend-dot {

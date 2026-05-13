@@ -32,19 +32,19 @@
 
   <div class="section-label loose">The Three Ethical Choices</div>
   <div class="middle-row">
-    <div class="option-card deon" data-vote-index="1" onclick="toggleVote(this)">
+    <div class="option-card deon" data-vote-index="1" onclick="addVote(this)">
       <span class="tag">Deontological</span>
       <img class="card-img" src="img/Keep_Promise.webp" alt="Keep the Promise">
       <div class="choice">Keep the Promise</div>
       <div class="desc">Give the money to the nephew as promised. Honor the duty to your dying friend — the moral worth of the action lies in keeping your word, regardless of outcome.</div>
     </div>
-    <div class="option-card util" data-vote-index="0" onclick="toggleVote(this)">
+    <div class="option-card util" data-vote-index="0" onclick="addVote(this)">
       <span class="tag">Utilitarianism</span>
       <img class="card-img" src="img/Give_Money.webp" alt="Donate to the Hospital">
       <div class="choice">Donate to the Hospital</div>
       <div class="desc">Give the money to the children's hospital. This produces the greatest good for the greatest number, alleviating suffering and funding life-saving research.</div>
     </div>
-    <div class="option-card ego" data-vote-index="2" onclick="toggleVote(this)">
+    <div class="option-card ego" data-vote-index="2" onclick="addVote(this)">
       <span class="tag">Egoism</span>
       <img class="card-img" src="img/Take_Money.webp" alt="Keep the Money">
       <div class="choice">Keep the Money</div>
@@ -65,9 +65,9 @@
         <canvas id="barChart" role="img" aria-label="Bar chart: Utilitarianism 10 votes, Deontological 4 votes, Egoism 4 votes">Votes: Utilitarianism 10, Deontological 4, Egoism 4.</canvas>
       </div>
       <div class="legend">
-        <span class="legend-item"><span class="legend-dot util"></span>Utilitarianism</span>
-        <span class="legend-item"><span class="legend-dot deon"></span>Deontological</span>
-        <span class="legend-item"><span class="legend-dot ego"></span>Egoism</span>
+        <span class="legend-item" data-vote-index="0" onclick="subtractVote(this)"><span class="legend-dot util"></span>Utilitarianism</span>
+        <span class="legend-item" data-vote-index="1" onclick="subtractVote(this)"><span class="legend-dot deon"></span>Deontological</span>
+        <span class="legend-item" data-vote-index="2" onclick="subtractVote(this)"><span class="legend-dot ego"></span>Egoism</span>
       </div>
     </div>
     <div class="chart-card">
@@ -76,9 +76,9 @@
         <canvas id="pieChart" role="img" aria-label="Pie chart: Utilitarianism 56%, Deontological 22%, Egoism 22%">Utilitarianism 56%, Deontological 22%, Egoism 22%.</canvas>
       </div>
       <div class="legend">
-        <span class="legend-item"><span class="legend-dot util"></span>Utilitarianism — 56%</span>
-        <span class="legend-item"><span class="legend-dot deon"></span>Deontological — 22%</span>
-        <span class="legend-item"><span class="legend-dot ego"></span>Egoism — 22%</span>
+        <span class="legend-item" data-vote-index="0" onclick="subtractVote(this)"><span class="legend-dot util"></span>Utilitarianism — 56%</span>
+        <span class="legend-item" data-vote-index="1" onclick="subtractVote(this)"><span class="legend-dot deon"></span>Deontological — 22%</span>
+        <span class="legend-item" data-vote-index="2" onclick="subtractVote(this)"><span class="legend-dot ego"></span>Egoism — 22%</span>
       </div>
     </div>
   </div>

@@ -2,10 +2,8 @@ const UTIL = '#1a5c2a', DEON = '#1a4a6e', EGO = '#8b4510';
 const NAMES = ['Utilitarianism', 'Deontological', 'Egoism'];
 
 let votes = [10, 4, 4];
-let active = [false, false, false];
 
 function total() { return votes[0] + votes[1] + votes[2]; }
-
 function pct(i) { return total() > 0 ? Math.round(votes[i] / total() * 100) : 0; }
 
 const barChart = new Chart(document.getElementById('barChart'), {
@@ -57,19 +55,9 @@ const pieChart = new Chart(document.getElementById('pieChart'), {
   }
 });
 
-function toggleVote(el) {
-  const i = parseInt(el.dataset.voteIndex);
-  active[i] = !active[i];
-
-  if (active[i]) {
-    votes[i]++;
-    el.classList.add('selected');
-  } else {
-    votes[i]--;
-    el.classList.remove('selected');
-  }
-
-  document.getElementById('vote-' + i).textContent = votes[i];
+function updateAll() {
+  for (let i = 0; i < 3; i++)
+    document.getElementById('vote-' + i).textContent = votes[i];
 
   barChart.data.datasets[0].data = [...votes];
   barChart.update();
@@ -78,4 +66,24 @@ function toggleVote(el) {
   pieChart.data.datasets[0].data = [...votes];
   pieChart.data.labels = NAMES.map((n, i) => `${n} (${t > 0 ? Math.round(votes[i] / t * 100) : 0}%)`);
   pieChart.update();
+}
+
+function flash(el) {
+  el.classList.add('flash');
+  setTimeout(() => el.classList.remove('flash'), 200);
+}
+
+function addVote(el) {
+  const i = parseInt(el.dataset.voteIndex);
+  votes[i]++;
+  flash(el);
+  updateAll();
+}
+
+function subtractVote(el) {
+  const i = parseInt(el.dataset.voteIndex);
+  if (votes[i] === 0) return;
+  votes[i]--;
+  flash(el);
+  updateAll();
 }
